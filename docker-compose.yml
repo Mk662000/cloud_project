@@ -1,0 +1,107 @@
+version: "3.8"
+services:
+  frontendserver:
+    container_name: frontendserver
+    image: mk662000/frontendserver
+    build:
+      context: .
+      dockerfile: Dockerfile2
+      target: development
+    working_dir: /frontendserver
+    # volumes:
+    #   - ./:/frontendserver
+    ports:
+      - 3000:3000
+
+  api:
+    imagem: mk662000/api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /api
+    ports:
+      - 9090:9090
+    depends_on:
+      - inventory_db
+      - auth_db
+      - accounts_db
+    links:
+      - inventory_db:db
+      - auth_db:db
+      - accounts_db:db
+    # volumes:
+    #   - ./:/api
+    command: "php  -S 0.0.0.0:9090 "
+
+  phpmyadmin_inventory:
+    image: phpmyadmin
+    ports:
+      - 7070:80
+    environment:
+      - PMA_ARBITRARY=0
+    depends_on:
+      - inventory_db
+    links:
+      - inventory_db:db
+
+  phpmyadmin_accounts:
+    image: phpmyadmin
+    ports:
+      - 7071:80
+    environment:
+      - PMA_ARBITRARY=0
+    depends_on:
+      - accounts_db
+    links:
+      - accounts_db:db
+
+  phpmyadmin_orders:
+    image: phpmyadmin
+    ports:
+      - 7072:80
+    environment:
+      - PMA_ARBITRARY=0
+    depends_on:
+      - orders_db
+    links:
+      - orders_db:db
+
+  accounts_db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - accounts_db:/var/lib/mysql
+
+  inventory_db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - inventory_db:/var/lib/mysql
+
+  auth_db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - auth_db:/var/lib/mysql
+
+  orders_db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - orders_db:/var/lib/mysql
+
+volumes:
+  auth_db:
+  inventory_db:
+  accounts_db:
+  orders_db:
+  frontendserver:
+  api:

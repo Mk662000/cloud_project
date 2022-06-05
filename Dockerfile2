@@ -1,0 +1,19 @@
+FROM node:14-alpine AS development
+ENV NODE_ENV development
+# Add a work directory
+WORKDIR /frontendserver
+# Cache and Install dependencies
+# COPY calculator-master/package.json ./
+# COPY calculator-master/yarn.lock ./
+# RUN yarn install
+# Copy app files
+COPY frontendserver ./
+
+
+
+# Expose port
+EXPOSE 3000
+# Start the app
+RUN npm install
+
+CMD [ "npm", "start" ]
