@@ -1,0 +1,21 @@
+.rightSide textarea {
+  height: 203px;
+  margin: 10px 0px;
+}
+.contact h1 {
+  margin: 20px 0px;
+  text-decoration: underline #639dc3 10px;
+}
+
+.contact input {
+  margin: 10px 0px;
+}
+
+.contact {
+  background-image: url("../assets/background.jpg");
+  background-size: cover;
+  padding: 50px 0px;
+}
+* {
+  margin: 0;
+}

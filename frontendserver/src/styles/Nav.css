@@ -1,0 +1,30 @@
+.Nav {
+  background-color: #e1ecf3;
+  box-shadow: 10px 2px 10px 5px #f5f0f0;
+  width: 100%;
+  text-transform: capitalize;
+  display: flex;
+  font-size: 1.5rem;
+}
+
+.links {
+  text-decoration: none;
+  color: black;
+  padding-left: 50px;
+}
+.links :hover {
+  color: #0e3e9e;
+  text-decoration: none;
+}
+#nav-dropdown-example {
+  color: black;
+}
+.active {
+  font-weight: bold;
+}
+.dropItem :hover {
+  background-color: #e1ecf3;
+}
+.dropItem :focus {
+  background-color: #e1ecf3;
+}

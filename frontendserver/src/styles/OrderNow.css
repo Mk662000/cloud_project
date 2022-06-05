@@ -1,0 +1,13 @@
+.btn{
+    float: right;
+}
+.contactinfo{
+    text-decoration: underline #639DC3 10px;
+}
+.input{
+    border: 1px solid #639DC3 ;
+    border-radius: 5px;
+}
+.order .btn{
+    float:inherit;
+}

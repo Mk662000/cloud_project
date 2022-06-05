@@ -1,0 +1,44 @@
+/* .drug{
+    width: 325px;
+    margin-left: 121%;
+    margin-top: 100px;
+}
+
+.first{
+    width: 50%;
+    height: 114px;
+    padding-top: 20px;
+    padding-left: 100px;
+    max-width: 50%;
+}
+
+.first h2{
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.first h3{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: normal;
+}
+.all {
+    display: flex;
+    height: 120px;
+} */
+
+.btn button{
+    margin-left: -3px;
+    margin-top: 24px;
+    display: inline-block;
+    outline: none;
+    border: none;
+    font: inherit;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    color: #FFFFFF;
+    border-radius: 8px;
+    background-color: #0E3E9E;
+    padding: 0.5rem 1.5rem;
+    box-shadow: 2px 2px 2px rgb(155 152 152);
+}

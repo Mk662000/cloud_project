@@ -1,0 +1,31 @@
+.item {
+    margin: 1rem 0;
+  }
+  
+  .image {
+    width: 64%;
+    height: 20rem;
+
+    }
+  
+  .image img {
+    max-width: 50%;
+    max-height: 60%;
+  }
+  
+  .content {
+    text-align: left;
+    padding: 1rem;
+    margin-left: 400px;
+    margin-top: -340px;
+    margin-bottom: 5%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .content h3 {
+    font-size: 1.25rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #000000;
+  }
+
+  
